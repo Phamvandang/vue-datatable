@@ -1,2 +1,2 @@
-# vue-datatable
-vue datatable
+# vue
+vue
