@@ -123,12 +123,11 @@ export default {
     },
     createEmployees() {
       let data = {
-        id: this.editedItem.id+=1,
         name: this.editItem.username,
         salary: this.editItem.salary,
         age: this.editItem.age
       }
-       this.$store.dispatch('createEmployees', data).then(() => {
+       this.$store.dispatch('createEmployees', {params: data}).then(() => {
          this.loadEmployees()
        }).catch(() => {
          console.log('errors')
@@ -139,7 +138,6 @@ export default {
         // Object.assign(this.desserts[this.editedIndex], this.editedItem)
         console.log('edit')
       } else {
-        this.editItem.id += 1
         this.createEmployees()
         this.loadEmployees()
       }
